@@ -47,9 +47,9 @@ function contact() {
 						{errors.email && touched.email ? <div>{errors.email}</div> : null}
 
 						<Field className="contactForm" name="color" as="select" placeholder="Textfield">
-							<option value="red">HR</option>
-							<option value="green"></option>
-							<option value="blue">Blue</option>
+							<option value="hr">HR</option>
+							<option value="important">Important</option>
+							<option value="sallary">Sallary</option>
 						</Field>
 
 						<Field
