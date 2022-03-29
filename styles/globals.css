@@ -15,7 +15,6 @@ a {
   box-sizing: border-box;
 }
 
-
 .navigation {
   background-color: #014034;
   color: white;
@@ -23,16 +22,15 @@ a {
 }
 
 ul {
-  display:flex;
+  display: flex;
   justify-content: space-around;
   margin: 0;
   padding: 30px;
 }
 
 .contactForm {
-	display: block;
-	margin: 10px;
-	border: 2px black solid;
-	height: 25px;
+  display: block;
+  margin: 10px;
+  border: 2px black solid;
+  height: 25px;
 }
-
