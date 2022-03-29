@@ -1,23 +1,26 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import Header from './components/header';
 
 function contact() {
 	const SignupSchema = Yup.object().shape({
 		firstName: Yup.string()
-			.min(2, 'Too Short!')
+			.min(2, 'Too Short, minimum 3 characters.')
 			.max(50, 'Too Long!')
 			.required('Required'),
 		lastName: Yup.string()
-			.min(2, 'Too Short!')
+			.min(2, 'Too Short, minimum 4 characters.')
 			.max(50, 'Too Long!')
 			.required('Required'),
 		email: Yup.string().email('Invalid email').required('Required'),
-		text: Yup.string().min(10, 'Too Short!'),
+		text: Yup.string().min(10, 'Too Short, minimum 10 characters.'),
 	});
 
 	return (
 		<div className="contactPage">
+			<Header/>
+
 			<h1 className="h1Contact">Signup</h1>
 			<Formik
 				initialValues={{
@@ -28,33 +31,33 @@ function contact() {
 				}}
 				validationSchema={SignupSchema}
 				onSubmit={(values) => {
-					// same shape as initial values
 					console.log(values);
 				}}>
 				{({ errors, touched }) => (
-					<Form>
-						<Field className="contactForm" name="firstName" />
+					<Form className="mainForm">
+						<Field className="contactForm" name="firstName" placeholder="Firstname"/>
 						{errors.firstName && touched.firstName ? (
 							<div>{errors.firstName}</div>
 						) : null}
-						<Field className="contactForm" name="lastName" />
+						<Field className="contactForm" name="lastName" placeholder="Lastname" />
 						{errors.lastName && touched.lastName ? (
 							<div>{errors.lastName}</div>
 						) : null}
-						<Field className="contactForm" name="email" type="email" />
+						<Field className="contactForm" name="email" type="email" placeholder="Email" />
 						{errors.email && touched.email ? <div>{errors.email}</div> : null}
 
-						<Field className="contactForm" name="color" as="select">
-							<option value="red">Red</option>
-							<option value="green">Green</option>
+						<Field className="contactForm" name="color" as="select" placeholder="Textfield">
+							<option value="red">HR</option>
+							<option value="green"></option>
 							<option value="blue">Blue</option>
 						</Field>
 
 						<Field
-							placeholder="Write your message"
+							placeholder="Message"
 							className="contactForm"
 							as="textarea"
-							name="text"></Field>
+							name="text"
+							row="2"></Field>
 						{errors.text && touched.text ? <div>{errors.text}</div> : null}
 						<button className="submitButton" type="submit">
 							Submit

@@ -6,7 +6,7 @@ function Header() {
 	const { data: session } = useSession();
 
 	return (
-		<header className="navBar">
+		<header className="navigation">
 			<nav>
 				<ul>
 					<li>

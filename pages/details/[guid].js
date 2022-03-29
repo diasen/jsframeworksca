@@ -21,7 +21,7 @@ export default function Person({ name, about, company, age }) {
 					<h3>{company}</h3>
 					<p>{about}</p>
 				</div>
-				<a href="http://localhost:3000/">Back to main</a>
+				<a href="http://localhost:3000/">Return</a>
 			</main>
 		</div>
 	);
