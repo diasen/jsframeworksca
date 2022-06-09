@@ -10,7 +10,6 @@ You can use either a REST or GraphQL API for the API calls.
 
 ## Description
 
-Level 1
 Your app should have the following paths:
 
 "/"
